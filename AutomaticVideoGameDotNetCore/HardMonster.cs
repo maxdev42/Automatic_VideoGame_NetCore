@@ -7,6 +7,7 @@ namespace AutomaticVideoGameDotNetCore
     public class HardMonster : Monster
     {
         public const int spellMonster = 5;
+        Dice dice = new Dice();
 
         public override void Fight(Player player)
         {
@@ -16,7 +17,7 @@ namespace AutomaticVideoGameDotNetCore
 
         private int SpellAttack()
         {
-            int diceResult = Dice.LaunchDice();
+            int diceResult = dice.LaunchDice();
 
             if (diceResult == 6)
             {

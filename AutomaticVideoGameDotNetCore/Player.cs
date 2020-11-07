@@ -9,6 +9,7 @@ namespace AutomaticVideoGameDotNetCore
         private int playerLifePoints;
         private bool alive;
         private int points;
+        Dice dice = new Dice();
 
         public int PlayerLifePoints
         {
@@ -46,6 +47,12 @@ namespace AutomaticVideoGameDotNetCore
             }
         }
 
+        public void Fight(FinalBoss finalBoss)
+        {
+            int resultPoints = dice.LaunchDice(25);
+            finalBoss.SuffersDamage(resultPoints);
+        }
+
         public void SuffersDamage(int damagePointLife)
         {
             PlayerLifePoints = PlayerLifePoints - damagePointLife;
@@ -53,7 +60,7 @@ namespace AutomaticVideoGameDotNetCore
 
         public int LaunchDice()
         {
-            return Dice.LaunchDice();
+            return dice.LaunchDice();
         }
 
         public bool ShieldProtect()

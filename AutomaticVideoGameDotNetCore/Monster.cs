@@ -8,6 +8,7 @@ namespace AutomaticVideoGameDotNetCore
     {
         public bool Alive { get; private set; }
         private const int damages = 10;
+        Dice dice = new Dice();
 
         public Monster()
         {
@@ -32,7 +33,7 @@ namespace AutomaticVideoGameDotNetCore
 
         public int LaunchDice()
         {
-            return Dice.LaunchDice();
+            return dice.LaunchDice();
         }
 
     }
